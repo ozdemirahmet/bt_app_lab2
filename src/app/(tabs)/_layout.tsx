@@ -1,4 +1,5 @@
 import Feather from '@expo/vector-icons/Feather';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from 'expo-router';
 import React, { useMemo } from 'react';
 import { StyleSheet, useColorScheme } from 'react-native';
@@ -48,6 +49,19 @@ export default function TabLayout() {
           tabBarIcon: ({ focused, size }) => (
             <Feather
               name="clock"
+              size={size - 2}
+              color={focused ? theme.accent : theme.textMuted}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="calculator"
+        options={{
+          title: 'Hesap',
+          tabBarIcon: ({ focused, size }) => (
+            <Ionicons
+              name="calculator-outline"
               size={size - 2}
               color={focused ? theme.accent : theme.textMuted}
             />

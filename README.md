@@ -1,6 +1,6 @@
 # bt_app_lab_2
 
-Expo (React Native) ve Supabase ile geliştirilmiş; **görev yönetimi (To-Do)**, **Pomodoro zamanlayıcısı** ve **kullanıcı profili / bulut senkronizasyonu** özelliklerini bir arada sunan mobil uygulama.
+Expo (React Native) ve Supabase ile geliştirilmiş; **görev yönetimi (To-Do)**, **Pomodoro zamanlayıcısı**, **hesap makinesi** ve **kullanıcı profili / bulut senkronizasyonu** özelliklerini minimalist bir arayüzde sunan mobil uygulama.
 
 ---
 
@@ -12,8 +12,12 @@ Expo (React Native) ve Supabase ile geliştirilmiş; **görev yönetimi (To-Do)*
   - Dokunsal geri bildirim (`expo-haptics`) desteği
 - **Pomodoro Zamanlayıcı:**
   - Üç aşamalı zamanlayıcı: **Odak** (25 dk), **Kısa Mola** (5 dk) ve **Uzun Mola** (15 dk)
-  - Başlatma, duraklatma ve sıfırlama kontrolleri
+  - Başlatma, duraklatma, sıfırlama ve aşama atlama kontrolleri
   - Tamamlanan oturumların yerel ve uzak veritabanına kaydedilmesi
+- **Hesap Makinesi:**
+  - Dört temel işlem (`+`, `-`, `×`, `÷`), yüzde (`%`), işaret değiştirme (`±`), ondalık nokta ve geri silme
+  - İşlem geçmişi önizlemesi, sıfıra bölme koruması (`Hata`) ve dokunsal geri bildirim
+  - Açık/koyu tema uyumlu `tabular-nums` minimalist tuş takımı
 - **Kimlik Doğrulama ve Profil:**
   - Supabase Auth ile giriş yapma ve kayıt olma (`src/app/auth.tsx`)
   - Kullanıcı profili ve günlük Pomodoro hedefi (`daily_pomodoro_goal`) yönetimi
@@ -44,18 +48,18 @@ bt_app_lab_2/
 ├── assets/                  # Uygulama ikonları ve görseller
 ├── src/
 │   ├── app/                 # Expo Router ekran ve layout tanımları
-│   │   ├── (tabs)/          # Sekme navigasyonu (index, pomodoro, profile)
+│   │   ├── (tabs)/          # Sekme navigasyonu (index, pomodoro, calculator, profile)
 │   │   ├── _layout.tsx      # Kök layout
 │   │   └── auth.tsx         # Giriş / Kayıt ekranı
 │   ├── components/          # Yeniden kullanılabilir UI bileşenleri
 │   ├── context/             # AuthContext (oturum yönetimi)
 │   ├── hooks/               # useTodos, usePomodoro özel hook'ları
 │   ├── lib/                 # Supabase istemci yapılandırması
-│   ├── screens/             # Ekran bileşenleri (Home, Pomodoro, Profile, Auth)
+│   ├── screens/             # Ekran bileşenleri (Home, Pomodoro, Calculator, Profile, Auth)
 │   ├── storage/             # Yerel (AsyncStorage) ve uzak (Supabase) veri katmanı
 │   ├── theme/               # Tasarım token'ları (renkler, boşluklar, tipografi)
 │   ├── types/               # TypeScript tipleri (database, todo, pomodoro)
-│   ├── utils/               # Yardımcı fonksiyonlar (haptics, uuid)
+│   ├── utils/               # Yardımcı fonksiyonlar (calculator, haptics, uuid)
 │   └── __tests__/           # Birim ve bileşen testleri
 ├── .env.example             # Örnek ortam değişkenleri
 ├── app.json                 # Expo yapılandırması
